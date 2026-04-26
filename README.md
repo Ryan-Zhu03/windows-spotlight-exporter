@@ -35,14 +35,4 @@
 - 锁屏或桌面没有启用 Windows 聚焦
 - 当前 Windows 账号权限限制了该目录读取
 
-### 别人想用怎么办
-
-最简单的方式就是把整个项目发到 GitHub，别人下载后：
-
-1. 安装 Node.js
-2. 解压项目
-3. 双击 `start.bat`
-
-## 发布到 GitHub
-
 仓库发布说明见 [PUBLISH_TO_GITHUB.md](C:/Users/Ryan_/Documents/Codex/2026-04-26/web/PUBLISH_TO_GITHUB.md)。
