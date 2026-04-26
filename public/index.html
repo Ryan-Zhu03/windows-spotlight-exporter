@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows 聚焦图片导出</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">LOCAL TOOL</p>
+        <h1>Windows 聚焦图片导出器</h1>
+        <p class="hero-copy">
+          自动扫描系统里的 Windows 聚焦缓存，筛出可用图片并导出为正常可查看的
+          <code>.jpg</code> 文件。
+        </p>
+      </section>
+
+      <section class="panel controls-panel">
+        <div class="panel-head">
+          <h2>导出设置</h2>
+          <button id="refreshBtn" class="secondary-btn" type="button">刷新预览</button>
+        </div>
+
+        <label class="field">
+          <span>导出目录</span>
+          <input id="outputDir" type="text" />
+        </label>
+
+        <div class="grid-fields">
+          <label class="field">
+            <span>最小宽度</span>
+            <input id="minWidth" type="number" min="0" step="1" value="1000" />
+          </label>
+
+          <label class="field">
+            <span>最小高度</span>
+            <input id="minHeight" type="number" min="0" step="1" value="500" />
+          </label>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input id="landscapeOnly" type="checkbox" checked />
+            <span>只导出横版壁纸</span>
+          </label>
+          <label class="toggle">
+            <input id="dedupe" type="checkbox" checked />
+            <span>已存在时跳过覆盖</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="exportBtn" class="primary-btn" type="button">开始导出</button>
+          <button id="openBtn" class="secondary-btn" type="button">打开导出目录</button>
+        </div>
+      </section>
+
+      <section class="stats-row">
+        <article class="stat-card">
+          <span class="stat-label">扫描到图片</span>
+          <strong id="assetCount">-</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">默认导出目录</span>
+          <strong id="defaultDir">-</strong>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>预览</h2>
+          <p id="statusText" class="muted">正在读取聚焦图片…</p>
+        </div>
+        <div id="gallery" class="gallery"></div>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="panel-head">
+          <h2>导出结果</h2>
+        </div>
+        <pre id="resultBox">等待操作</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

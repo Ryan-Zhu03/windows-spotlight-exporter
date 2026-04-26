@@ -1,0 +1,13 @@
+{
+  "name": "windows-spotlight-exporter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A tiny local app that exports Windows Spotlight images as viewable JPG files.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
